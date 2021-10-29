@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form method="POST" action="send" class="container">
+            <h2>Contact Us</h2>
+            <div id="first" class="box">
+                <input type="text" name="first" required>
+                <span class="text">First Name</span>
+                <span class="line"></span>
+            </div>
+            <div id="last" class="box">
+                <input type="text" name="last" required>
+                <span class="text">Last Name</span>
+                <span class="line"></span>
+            </div>
+            <div id="email" class="box">
+                <input type="text" name="email" required>
+                <span class="text">Email</span>
+                <span class="line"></span>
+            </div>
+            <div id="mobile" class="box">
+                <input type="text" name="mobile" required>
+                <span class="text">Mobile</span>
+                <span class="line"></span>
+            </div>
+            <div id="msg" class="box">
+                <textarea name="msg" required></textarea>
+                <span class="text">Type Your Message Here...</span>
+                <span class="line"></span>
+            </div>
+            <input id="submit" type="submit" value="Send">
+        </form>
+    </section>
+</body>
+</html>

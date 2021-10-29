@@ -1,0 +1,316 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-1: #001923;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--color-1);
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffeb3b), to(#e91e63));
+  background: linear-gradient(#ffeb3b, #e91e63);
+  border-radius: 50%;
+  -webkit-transform: translate(-400px, -160px);
+          transform: translate(-400px, -160px);
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2196f3), to(#83d8ff));
+  background: linear-gradient(#2196f3, #83d8ff);
+  border-radius: 50%;
+  -webkit-transform: translate(380px, 160px);
+          transform: translate(380px, 160px);
+}
+
+section .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (200px)[2];
+      grid-template-columns: repeat(2, 200px);
+      grid-template-areas: "title title" "first last" "email mobile" "msg msg" "submit ...";
+  -webkit-column-gap: 16px;
+          column-gap: 16px;
+  row-gap: 42px;
+  padding: 32px 96px;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+}
+
+section .container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  height: 100%;
+  width: 36%;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+}
+
+section .container div {
+  position: relative;
+}
+
+section .container div .text {
+  position: absolute;
+  top: .2em;
+  left: .7rem;
+  z-index: 2;
+  color: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container div .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  border-radius: 2px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: title;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 36px;
+}
+
+section .container #first {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: first;
+}
+
+section .container #first input {
+  display: block;
+  width: 98%;
+  padding: 6px 2px;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container #first input:focus + .text,
+section .container #first input:valid + .text {
+  top: -1.4rem;
+  left: 0;
+}
+
+section .container #first input:focus ~ .line,
+section .container #first input:valid ~ .line {
+  height: 100%;
+}
+
+section .container #last {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: last;
+}
+
+section .container #last input {
+  display: block;
+  width: 98%;
+  padding: 6px 2px;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container #last input:focus + .text,
+section .container #last input:valid + .text {
+  top: -1.4rem;
+  left: 0;
+}
+
+section .container #last input:focus ~ .line,
+section .container #last input:valid ~ .line {
+  height: 100%;
+}
+
+section .container #email {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: email;
+}
+
+section .container #email input {
+  display: block;
+  width: 98%;
+  padding: 6px 2px;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container #email input:focus + .text,
+section .container #email input:valid + .text {
+  top: -1.4rem;
+  left: 0;
+}
+
+section .container #email input:focus ~ .line,
+section .container #email input:valid ~ .line {
+  height: 100%;
+}
+
+section .container #mobile {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: mobile;
+}
+
+section .container #mobile input {
+  display: block;
+  width: 98%;
+  padding: 6px 2px;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container #mobile input:focus + .text,
+section .container #mobile input:valid + .text {
+  top: -1.4rem;
+  left: 0;
+}
+
+section .container #mobile input:focus ~ .line,
+section .container #mobile input:valid ~ .line {
+  height: 100%;
+}
+
+section .container #msg {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: msg;
+}
+
+section .container #msg textarea {
+  width: 100%;
+  height: 16px;
+  word-break: break-word;
+  resize: vertical;
+  display: block;
+  width: 98%;
+  padding: 6px 2px;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section .container #msg textarea:focus + .text,
+section .container #msg textarea:valid + .text {
+  top: -1.4rem;
+  left: 0;
+}
+
+section .container #msg textarea:focus ~ .line,
+section .container #msg textarea:valid ~ .line {
+  height: 100%;
+}
+
+section .container #submit {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: submit;
+  width: 96px;
+  padding: 8px 0;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+/*# sourceMappingURL=style.css.map */
