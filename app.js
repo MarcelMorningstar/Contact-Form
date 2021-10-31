@@ -18,7 +18,34 @@ app.get('/', function (req, res) {
 });
 
 app.post('/send', function (req, res) {
-    console.log(req.body);
+    const output = `
+        <h3>Name: ${req.body.first} ${req.body.last}</h3>
+        <h4>Email: ${req.body.email}</h4>
+        <h4>Phone: ${req.body.mobile}</h4>
+        <h3>Message: </h3>
+        <p>${req.body.msg}</p>
+    `;
+
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: '???@gmail.com',
+            pass: '???'
+        }
+    });
+    
+    let info = {
+        from: '"Contact Page" <???@gmail.com>',
+        to: "???@gmail.com",
+        subject: "Contact Request",
+        text: "",
+        html: output
+    };
+
+    transporter.sendMail(info, () => {
+        res.redirect('/');
+    });
 });
+
 
 app.listen(80);
