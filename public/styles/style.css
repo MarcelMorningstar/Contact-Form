@@ -271,6 +271,8 @@ section .container #msg {
 section .container #msg textarea {
   width: 100%;
   height: 16px;
+  min-height: 16px;
+  max-height: 200px;
   word-break: break-word;
   resize: vertical;
   display: block;

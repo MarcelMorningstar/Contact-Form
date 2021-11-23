@@ -22,14 +22,14 @@
                 <span class="line"></span>
             </div>
             <div id="email" class="box">
-                <input type="text" name="email" required>
-                <span class="text">Email</span>
-                <span class="line"></span>
+                <input id="emailIn" type="email" name="email" onchange="checkEmail()" required>
+                <span id="emailText" class="text">Email</span>
+                <span id="emailLine" class="line"></span>
             </div>
             <div id="mobile" class="box">
-                <input type="text" name="mobile" required>
-                <span class="text">Mobile</span>
-                <span class="line"></span>
+                <input id="mobileIn" type="text" name="mobile" pattern="[0-9]{8}" maxlength="8" onchange="checkMobile()" required>
+                <span id="mobileText" class="text">Mobile</span>
+                <span id="mobileLine" class="line"></span>
             </div>
             <div id="msg" class="box">
                 <textarea name="msg" required></textarea>
@@ -38,6 +38,43 @@
             </div>
             <input id="submit" type="submit" value="Send">
         </form>
+
+        <script>
+            const email = document.getElementById("emailIn");
+            const emailText = document.getElementById("emailText");
+            const emailLine = document.getElementById("emailLine");
+
+            function checkEmail() {
+                if(email.value.length > 0) {
+                    emailText.style.top = "-1.4rem";
+                    emailText.style.left = "0";
+                    emailLine.style.height = "100%";
+                }
+                else {
+                    emailText.style.top = "";
+                    emailText.style.left = "";
+                    emailLine.style.height = "";
+                }
+            }
+
+
+            const mobile = document.getElementById("mobileIn");
+            const mobileText = document.getElementById("mobileText");
+            const mobileLine = document.getElementById("mobileLine");
+
+            function checkMobile() {
+                if(mobile.value.length > 0) {
+                    mobileText.style.top = "-1.4rem";
+                    mobileText.style.left = "0";
+                    mobileLine.style.height = "100%";
+                }
+                else {
+                    mobileText.style.top = "";
+                    mobileText.style.left = "";
+                    mobileLine.style.height = "";
+                }
+            }
+        </script>
     </section>
 </body>
 </html>
